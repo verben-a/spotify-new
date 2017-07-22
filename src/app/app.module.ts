@@ -16,12 +16,13 @@ import { SpotifyService } from './spotify.service'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AlbumDetailComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AlbumDetailComponent,
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
