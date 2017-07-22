@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Directive } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {Observable} from 'rxjs/Observable';
 import {map} from 'rxjs/operator/map';
@@ -14,9 +14,11 @@ import { Album } from './album';
   styleUrls: ['./app.component.css'],
   providers: [SpotifyService]
 })
+// @Directive({selector: '[ngStyle]'})
 export class AppComponent {
   title = 'app';
   public artistName: any;
+  public showVisibility: any = 'hidden';
 
   albums: Album[] = []; // deafult!!! no albums
 
@@ -35,5 +37,15 @@ export class AppComponent {
   onSubmit() {
     this.spotifyService.getAlbum(this.artistName)
     .then(albums => this.albums = albums);
+  }
+
+  cover() {
+    if (this.showVisibility == 'hidden') {
+      this.showVisibility = 'visible';
+    }
+    else {
+      this.showVisibility = 'hidden';
+    }
+    
   }
 }

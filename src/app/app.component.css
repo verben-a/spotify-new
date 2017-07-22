@@ -1,23 +1,32 @@
 .nav {
     // background-color: #1a237e;
     color: white;
-    height: 60px;
     width: 100%;
     position: static;
-    padding-left: 40px;
-    padding-top: 10px;
+    padding-left: 50px;
+    padding-top: 40px;
     font-weight: bold;
-    font-size: 24px;
+    font-size: 36px;
     display: flex;
     box-sizing: border-box;
     flex-direction: row;
     align-items: center;
     white-space: nowrap;
     position: relative;
+    font-family:'Poiret One', cursive;
 }
 
 
-.form-control { width: 300px;
+.form-control { 
+    width: 300px;
+    border-radius: 15px;
+    // opacity: 0.5;
+    border: transparent;
+    background-color: #44464c;
+}
+
+.image h3 {
+  visibility: hidden;
 }
 
 
