@@ -11,7 +11,7 @@ import { RouterModule }   from '@angular/router';
 import { AppComponent } from './app.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { AlbumDetailComponent } from './album-detail.component';
-import { SpotifyService } from './spotify.service'
+import { AlbumService } from './album.service'
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import { SpotifyService } from './spotify.service'
     // NgStyle,
     NgbModule.forRoot()
   ],
-  providers: [ SpotifyService ],
+  providers: [ AlbumService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

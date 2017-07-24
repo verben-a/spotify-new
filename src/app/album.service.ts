@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import { Album } from './album'
 
 @Injectable()
-export class SpotifyService {
+export class AlbumService {
 
 	private headers = new Headers({'Content-Type': 'application/json'})
 	private spotifyUrl = 'https://spotify-alina.herokuapp.com/api/search';
@@ -20,6 +20,14 @@ export class SpotifyService {
 		.then(response => response.json().items as Album[])
 		.catch(this.handleError);
 	}
+
+	// getAlbum(id:string):Promise<Album> {
+	// 	const url = `${this.spotifyUrl}/album_tracks?album_id=${id}`;
+	// 	return this.http.get(url)
+	// 	.toPromise()
+	// 	.then(response => response.json().items as Tracks[])
+	// 	.catch(this.handleError);
+	// }
 
 
 	private handleError(error:any): Promise<any> {

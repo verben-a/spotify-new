@@ -4,7 +4,7 @@ import {Observable} from 'rxjs/Observable';
 import {map} from 'rxjs/operator/map';
 import {debounceTime} from 'rxjs/operator/debounceTime';
 import {distinctUntilChanged} from 'rxjs/operator/distinctUntilChanged';
-import { SpotifyService } from './spotify.service';
+import { AlbumService } from './album.service';
 import { Album } from './album';
 
 
@@ -12,30 +12,22 @@ import { Album } from './album';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [SpotifyService]
+  providers: [AlbumService]
 })
-// @Directive({selector: '[ngStyle]'})
+
 export class AppComponent {
   title = 'app';
   public artistName: any;
   public showVisibility: any = 'hidden';
 
-  albums: Album[] = []; // deafult!!! no albums
+  albums: Album[] = []; 
 
   constructor(
-    private spotifyService: SpotifyService){}
+    private albumService: AlbumService){}
 
 
-
-  // we have to "declare the nature of a variable (local)"
-  // search = (text$: Observable<string>) => {
-    // return map.call(distinctUntilChanged.call(debounceTime.call(text$, 200)),
-      // term => {
-      	// make an API http GET call after the "artists" get load, 
-      	// return term.length < 2 ? [] : states.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10)
-      // });
   onSubmit() {
-    this.spotifyService.getAlbum(this.artistName)
+    this.albumService.getAlbum(this.artistName)
     .then(albums => this.albums = albums);
   }
 
