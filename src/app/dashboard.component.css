@@ -1,0 +1,70 @@
+.nav {
+    // background-color: #1a237e;
+    color: white;
+    width: 100%;
+    position: static;
+    padding-left: 50px;
+    padding-top: 40px;
+    font-weight: bold;
+    font-size: 36px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    position: relative;
+    font-family:'Poiret One', cursive;
+}
+
+
+.form-control { 
+    width: 300px;
+    border-radius: 15px;
+    // opacity: 0.5;
+    border: transparent;
+    background-color: #44464c;
+}
+
+.image h3 {
+  visibility: hidden;
+}
+
+
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+a {
+  text-decoration: none;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.grid {
+  margin: 0;
+}
+.col-1-4 {
+  width: 25%;
+}
+
+@media (max-width: 600px) {
+  .module {
+    font-size: 10px;
+    max-height: 75px; }
+}
+@media (max-width: 1024px) {
+  .grid {
+    margin: 0;
+  }
+  .module {
+    min-width: 60px;
+  }
+}
+
