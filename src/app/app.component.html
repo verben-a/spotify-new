@@ -13,19 +13,19 @@
 	<hr>
 </div>
 <div *ngFor="let album of albums" class="col-1-4">
-<div class="albums">
-<table>
-<tbody>
-	<th class='image'><img on-mouseover="cover()" src="{{album.images[0].url}}" height="100" width="100">
-	<!-- <h3 [ngStyle]="{'visibility': showVisibility}">See tracks</h3> -->
-	</th>
-	<td><a href="{{album.external_urls.spotify}}" style="color: #72767f">{{ album.name }}</a>
-	<br>
-	<a routerLink="/album-details">See tracks</a>
-	</td>
-	
-	</tbody>
-</table>
+	<div class="albums">
+		<table>
+			<tbody>
+				<th class='image'><img on-mouseover="cover()" src="{{album.images[0].url}}" height="100" width="100">
+				<!-- <h3 [ngStyle]="{'visibility': showVisibility}">See tracks</h3> -->
+				</th>
+				<td><a href="{{album.external_urls.spotify}}" style="color: #72767f">{{ album.name }}</a>
+				<br>
+				<a [routerLink]="['/album-details', album.id]">See tracks</a>
+				</td>
+				
+				</tbody>
+		</table>
 </div>
 </div>
 </div>
