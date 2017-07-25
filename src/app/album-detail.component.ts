@@ -1,9 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Album } from './album';
 import { Track } from './track';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AlbumService } from './album.service';
+import { Location } from '@angular/common';
 
+import 'rxjs/add/operator/switchMap';
 
 @Component({
 	selector:'album-details',
@@ -12,8 +14,19 @@ import { AlbumService } from './album.service';
 	providers: [AlbumService]
 })
 
-export class AlbumDetailComponent  {
-	// @Input() track: Track;
+export class AlbumDetailComponent implements OnInit {
 
-	constructor(private router: Router) {}
+	tracks: Track[] = [];
+
+	constructor(private albumService: AlbumService,
+		private route: ActivatedRoute, private location: Location) {}
+
+	ngOnInit(): void {
+		this.route.paramMap
+		.switchMap((params: ParamMap) => this.albumService.getTracks(params.get('album_id')))
+		.subscribe(tracks =>{
+			console.log(tracks, 'tracks');
+		})
+	}
+
 }
