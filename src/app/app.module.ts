@@ -5,7 +5,6 @@ import { JsonpModule } from '@angular/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpModule }    from '@angular/http';
 import { NgStyle } from '@angular/common';
-import { RouterModule }   from '@angular/router';
 // import { NgbdTypeaheadBasic } from './typeahead-basic';
 
 import { AppComponent } from './app.component';
