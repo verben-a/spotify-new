@@ -25,7 +25,8 @@ export class AlbumDetailComponent implements OnInit {
 		this.route.paramMap
 		.switchMap((params: ParamMap) => this.albumService.getTracks(params.get('album_id')))
 		.subscribe(tracks =>{
-			console.log(tracks, 'tracks');
+			// console.log(tracks, 'tracks');
+			this.tracks = tracks
 		})
 	}
 

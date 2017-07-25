@@ -1,7 +1,7 @@
 <div class="album-detail">
 <table>
 	<tbody>
-		<tr><a *ngFor="let track of tracks" [routerLink]="['/album-details', album_id]">{{album.track}}</a></tr>
+		<tr><a *ngFor="let track of tracks" class="col-1-4">{{track.name}}</a></tr>
 	</tbody>
 </table>
 </div>
