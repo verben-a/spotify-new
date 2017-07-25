@@ -1,43 +1,12 @@
-import { Component, Directive } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {Observable} from 'rxjs/Observable';
-import {map} from 'rxjs/operator/map';
-import {debounceTime} from 'rxjs/operator/debounceTime';
-import {distinctUntilChanged} from 'rxjs/operator/distinctUntilChanged';
-import { AlbumService } from './album.service';
-import { Album } from './album';
-
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [AlbumService]
+  styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
   title = 'app';
-  public artistName: any;
-  public showVisibility: any = 'hidden';
-
-  albums: Album[] = []; 
-
-  constructor(
-    private albumService: AlbumService){}
-
-
-  onSubmit() {
-    this.albumService.getAlbum(this.artistName)
-    .then(albums => this.albums = albums);
-  }
-
-  cover() {
-    if (this.showVisibility == 'hidden') {
-      this.showVisibility = 'visible';
-    }
-    else {
-      this.showVisibility = 'hidden';
-    }
-    
-  }
+  constructor() { }
 }
