@@ -1,7 +1,9 @@
 <div class="album-detail">
+<div *ngFor="let track of tracks" class="col-1-4">
 <table>
 	<tbody>
-		<tr><a *ngFor="let track of tracks" class="col-1-4">{{track.name}}</a></tr>
+		<tr><a href="{{track.preview_url}}" style="color: #72767f">{{track.name}}</a></tr>
 	</tbody>
 </table>
+</div>
 </div>
