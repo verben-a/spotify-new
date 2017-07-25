@@ -27,7 +27,7 @@ import { AlbumService } from './album.service'
     HttpModule,
     RouterModule.forRoot([
       {
-        path: 'album-details',
+        path: 'album-details/:id',
         component: AlbumDetailComponent
       }
     ]),
