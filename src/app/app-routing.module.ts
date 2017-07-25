@@ -1,15 +1,18 @@
-import { NgModule }             from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { AppComponent }   from './app.component';
+import { AlbumDetailComponent } from './album-detail.component';
+import { DashboardComponent } from './dashboard.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-{path: '', component:AppComponent}];
-// { path: 'album_tracks/:album_id', component: AlbumDetailComponent }];
+	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+	{ path: 'dashboard', component: DashboardComponent },
+	{ path: 'album_tracks/:id', component: AlbumDetailComponent }
+]
 
 @NgModule({
-	imports: [ RouterModule.forRoot(routes) ],
-  	exports: [ RouterModule ]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 
-export class AppRoutingModule {}
+export class AppRoutingModule { }
