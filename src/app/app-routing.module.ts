@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 const routes: Routes = [
 	{ path: '', redirectTo: '/dashboard', pathMatch: 'full' },
 	{ path: 'dashboard', component: DashboardComponent },
-	{ path: 'album_tracks/:id', component: AlbumDetailComponent }
+	{ path: 'album-details/:id', component: AlbumDetailComponent }
 ]
 
 @NgModule({

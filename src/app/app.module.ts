@@ -25,16 +25,7 @@ import { DashboardComponent } from './dashboard.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule,
-    RouterModule.forRoot([
-      {
-        path: 'dashboard',
-        component: DashboardComponent},
-      {
-        path: 'album-details/:id',
-        component: AlbumDetailComponent
-      }
-    ]),
+    HttpModule,   
     // NgStyle,
     NgbModule.forRoot()
   ],
