@@ -1,0 +1,27 @@
+<div style="text-align:center">
+    <h1>Welcome to Spotify Finder!</h1>
+    <h2>Let us guide you through the world of music and your favourite artists!</h2>
+    <label for="typeahead-basic">Search for artist:</label>
+    <br>
+    <form (ngSubmit)="onSubmit()">
+	    <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="artistName" [ngModelOptions]="{standalone: true}"/>
+    </form>
+    <div class="hr">
+	    <hr>
+    </div>
+    <div *ngFor="let album of albums" class="col-1-4">
+	    <div class="albums">
+		    <table>
+			    <tbody>
+                    <th class='image'><img on-mouseover="cover()" src="{{album.images[0].url}}" height="100" width="100"></th>
+
+    				<td>
+                        <a href="{{album.external_urls.spotify}}" style="color: #72767f">{{ album.name }}</a>
+				        <br/>
+				        <a [routerLink]="['/album-details', album.id]">See tracks</a>
+				    </td>
+				
+				</tbody>
+		</table>
+    </div>
+</div>

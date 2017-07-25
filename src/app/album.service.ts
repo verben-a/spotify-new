@@ -3,7 +3,8 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Album } from './album'
+import { Track } from './track'
+import { Album } from './album';
 
 @Injectable()
 export class AlbumService {
@@ -21,13 +22,14 @@ export class AlbumService {
 		.catch(this.handleError);
 	}
 
-	// getAlbum(id:string):Promise<Album> {
-	// 	const url = `${this.spotifyUrl}/album_tracks?album_id=${id}`;
-	// 	return this.http.get(url)
-	// 	.toPromise()
-	// 	.then(response => response.json().items as Tracks[])
-	// 	.catch(this.handleError);
-	// }
+	getTracks(id:string):Promise<Track> {
+		console.log(`${id} found`);
+		const url = `${this.spotifyUrl}/album_tracks?album_id=${id}`;
+		return this.http.get(url)
+		.toPromise()
+		.then(response => response.json().items as Track[])
+		.catch(this.handleError);
+	}
 
 
 	private handleError(error:any): Promise<any> {
