@@ -12,12 +12,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { AlbumDetailComponent } from './album-detail.component';
 import { AlbumService } from './album.service'
-
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlbumDetailComponent
+    AlbumDetailComponent,
+    DashboardComponent
   ],
   
   imports: [
@@ -26,6 +27,9 @@ import { AlbumService } from './album.service'
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
+      {
+        path: 'dashboard',
+        component: DashboardComponent},
       {
         path: 'album-details/:id',
         component: AlbumDetailComponent
