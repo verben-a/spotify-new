@@ -1,8 +1,12 @@
 <div class="album-detail">
-<div *ngFor="let track of tracks" class="col-1-4">
-<table>
+<div *ngFor="let track of tracks">
+<table class="tracklist">
 	<tbody>
-		<tr><a href="{{track.preview_url}}" style="color: #72767f">{{track.name}}</a></tr>
+	<tr>
+		<th class="trackname"><a href="{{track.preview_url}}" class="grey">{{track.name}}</a></th>
+		<th class="listen"><a href="{{track.external_urls.spotify}}" class="white">Listen on Spotify</a></th>
+		<th class="watch"><a href="{{track.external_urls.spotify}}" class="white">Watch on YouTube</a></th>
+	</tr>
 	</tbody>
 </table>
 </div>

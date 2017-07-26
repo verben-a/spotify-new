@@ -1,3 +1,27 @@
+.tracklist {
+  width: 50%;
+  margin-left: 50px;
+}
+
+.trackname {
+  text-align: left;
+  width: 200px;
+  height: 20px;
+}
+.listen, .watch {
+    width: 110px;
+    text-align: right;
+}
+
+.grey {
+  color: #72767f;
+}
+
+.white {
+  color: white;
+  font-size: 13px;
+}
+
 [class*='col-'] {
   float: left;
   padding-right: 20px;
