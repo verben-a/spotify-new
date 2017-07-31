@@ -1,13 +1,15 @@
 <div class="album-detail">
-<div *ngFor="let track of tracks">
-<table class="tracklist">
-	<tbody>
-	<tr>
-		<th class="trackname"><a href="{{track.preview_url}}" class="grey">{{track.name}}</a></th>
-		<th class="listen"><a href="{{track.external_urls.spotify}}" class="white">Listen on Spotify</a></th>
-		<th class="watch"><a href="{{track.external_urls.spotify}}" class="white">Watch on YouTube</a></th>
-	</tr>
-	</tbody>
-</table>
-</div>
+  <div *ngFor="let track of tracks">
+    <table class="tracklist">
+      <tbody>
+        <tr>
+          <th class="trackname" class="grey">{{track.name_of_song}}</th>
+          <th class="listen">
+            <iframe [src]="('https://open.spotify.com/embed?uri=' + track.uri ) | safe" frameborder="0" allowtransparency="true"></iframe>
+            <a href="{{track.spotify_external_urls}}" class="white">Listen on Spotify</a></th>
+          <th class="watch"><a href="https://www.youtube.com/watch?v={{track.video_id}}" class="white">Watch on YouTube</a></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

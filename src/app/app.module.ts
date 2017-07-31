@@ -8,7 +8,7 @@ import { NgStyle } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule }     from './app-routing.module';
-import { AlbumDetailComponent } from './album-detail.component';
+import { AlbumDetailComponent, SafePipe } from './album-detail.component';
 import { AlbumService } from './album.service';
 import { DashboardComponent } from './dashboard.component';
 
@@ -17,7 +17,8 @@ import { DashboardComponent } from './dashboard.component';
   declarations: [
     AppComponent,
     AlbumDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    SafePipe
   ],
   
   imports: [

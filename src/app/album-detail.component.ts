@@ -1,11 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
 import { Album } from './album';
 import { Track } from './track';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AlbumService } from './album.service';
 import { Location } from '@angular/common';
+import { DomSanitizer, BrowserModule} from '@angular/platform-browser';
 
 import 'rxjs/add/operator/switchMap';
+
+@Pipe({ name: 'safe' })
+export class SafePipe implements PipeTransform {
+  constructor(private sanitizer: DomSanitizer) {}
+  transform(url) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
+  }
+}
 
 @Component({
 	selector:'album-details',
@@ -19,7 +28,7 @@ export class AlbumDetailComponent implements OnInit {
 	tracks: Track[] = [];
 
 	constructor(private albumService: AlbumService,
-		private route: ActivatedRoute, private location: Location) {}
+		private route: ActivatedRoute, private location: Location, private sanitizer: DomSanitizer) {}
 
 	ngOnInit(): void {
 		this.route.paramMap
@@ -28,6 +37,11 @@ export class AlbumDetailComponent implements OnInit {
 			console.log(tracks, 'tracks');
 			this.tracks = tracks
 		})
+	}
+
+	updateSpotifyUrl(url: string) {
+		// sanitize URL
+		// return this.sanitizer.bypassSecurityTrustResourceUrl(url);
 	}
 
 }
