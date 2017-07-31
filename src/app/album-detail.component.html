@@ -6,8 +6,10 @@
           <th class="trackname" class="grey">{{track.name_of_song}}</th>
           <th class="listen">
             <iframe [src]="('https://open.spotify.com/embed?uri=' + track.uri ) | safe" frameborder="0" allowtransparency="true"></iframe>
-            <a href="{{track.spotify_external_urls}}" class="white">Listen on Spotify</a></th>
-          <th class="watch"><a href="https://www.youtube.com/watch?v={{track.video_id}}" class="white">Watch on YouTube</a></th>
+            </th>
+          <th class="watch">
+          <iframe width="300" height="169" [src]="('https://www.youtube.com/embed/' + video_id) | safe" frameborder="0" allowfullscreen></iframe>
+          </th>
         </tr>
       </tbody>
     </table>
