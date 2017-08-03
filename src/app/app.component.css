@@ -5,14 +5,17 @@
     position: static;
     padding-left: 50px;
     padding-top: 40px;
-    font-weight: bold;
-    font-size: 36px;
     display: flex;
     box-sizing: border-box;
     flex-direction: row;
     align-items: center;
     white-space: nowrap;
     position: relative;
-    font-family:'Poiret One', cursive;
     margin-bottom: 30px;
+}
+
+.logo {
+    font-family:'Poiret One', cursive;
+    font-weight: bold;
+    font-size: 36px;
 }

@@ -5,6 +5,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AlbumService } from './album.service';
 import { Location } from '@angular/common';
 import { DomSanitizer, BrowserModule} from '@angular/platform-browser';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import 'rxjs/add/operator/switchMap';
 
