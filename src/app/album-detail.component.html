@@ -1,4 +1,5 @@
 <div class="album-detail">
+<div *ngIf="loading">Loading...</div>
   <div *ngFor="let track of tracks">
     <table class="tracklist">
       <tbody>

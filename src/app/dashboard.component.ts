@@ -18,6 +18,7 @@ import { Album } from './album';
 export class DashboardComponent {
   title = 'app';
   public artistName: any;
+  public loading: any;
   public showVisibility: any = 'hidden';
 
   albums: Album[] = []; 
@@ -27,8 +28,13 @@ export class DashboardComponent {
 
 
   onSubmit() {
+    this.loading = true;
+    this.albums = [];
     this.albumService.getAlbum(this.artistName)
-    .then(albums => this.albums = albums);
+    .then(albums => { 
+      this.albums = albums;
+      this.loading = false;
+    });
   }
 
   cover() {

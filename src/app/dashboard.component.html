@@ -1,6 +1,7 @@
 <div style="text-align:center">
-<div><img src="./spotify.png"></div>
+<!-- <div><img src="./spotify.png"></div> -->
   <h1>When Spotify meets YouTube</h1>
+  
 <h2>Let us guide you through the world of music and your favourite artists!</h2>
 <label for="typeahead-basic">Search for artist:</label>
 <br>
@@ -10,6 +11,7 @@
 <div class="hr">
 	<hr>
 </div>
+<div *ngIf="loading"><p>Loading...</p></div>
 <div *ngFor="let album of albums" class="col-1-4">
 <div class="albums">
 <table>
