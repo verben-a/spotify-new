@@ -1,4 +1,22 @@
-<div style="text-align:center">
+<ul class='slideshow' *ngIf="showVisibility">
+  <li>
+    <!-- By Keven Law from Los Angeles, USA (Long Hot Summer......) [CC-BY-SA-2.0 (http://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3AFlickr_-_law_keven_-_Long_Hot_Summer.......jpg -->
+    <span>Summer</span>
+  </li>
+  <li>
+    <!-- By http://www.ForestWander.com [CC-BY-SA-3.0-us (http://creativecommons.org/licenses/by-sa/3.0/us/deed.en)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3ARed-fall-tree-lake_-_West_Virginia_-_ForestWander.png -->
+    <span>Fall</span>
+  </li>
+  <li>
+    <!-- By Valerii Tkachenko [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3AWinter_wonderland_Austria_mountain_landscape_(8290712092).jpg -->
+    <span>Winter</span>
+  </li>
+  <li>
+    <!-- By Arman7 (Own work) [CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3ABoroujerd_spring.jpg -->
+    <span>Spring</span>
+  </li>
+</ul>
+<div class="text" style="text-align:center">
 <!-- <div><img src="./spotify.png"></div> -->
   <h1>When Spotify meets YouTube</h1>
   
@@ -16,7 +34,7 @@
 <div class="albums">
 <table>
 <tbody>
-	<th class='image'><img on-mouseover="cover()" src="{{album.images[0].url}}" height="100" width="100">
+	<th class='image'><img src="{{album.images[0].url}}" height="100" width="100">
 	<!-- <h3 [ngStyle]="{'visibility': showVisibility}">See tracks</h3> -->
 	</th>
 	<td><a href="{{album.external_urls.spotify}}" style="color: #72767f">{{ album.name }}</a>

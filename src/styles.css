@@ -10,5 +10,8 @@ body {
     line-height: 1.6em;
     background-color: #222326;
     color: white;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: #cccccc;
 }
 

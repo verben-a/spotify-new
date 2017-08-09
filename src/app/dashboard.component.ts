@@ -19,7 +19,7 @@ export class DashboardComponent {
   title = 'app';
   public artistName: any;
   public loading: any;
-  public showVisibility: any = 'hidden';
+  public showVisibility: any = true; // before submitting
 
   albums: Album[] = []; 
 
@@ -34,16 +34,8 @@ export class DashboardComponent {
     .then(albums => { 
       this.albums = albums;
       this.loading = false;
+      this.showVisibility = false;
     });
   }
 
-  cover() {
-    if (this.showVisibility == 'hidden') {
-      this.showVisibility = 'visible';
-    }
-    else {
-      this.showVisibility = 'hidden';
-    }
-    
-  }
 }
