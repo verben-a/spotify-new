@@ -1,41 +1,47 @@
 <ul class='slideshow' *ngIf="showVisibility">
   <li>
-    <!-- By Keven Law from Los Angeles, USA (Long Hot Summer......) [CC-BY-SA-2.0 (http://creativecommons.org/licenses/by-sa/2.0)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3AFlickr_-_law_keven_-_Long_Hot_Summer.......jpg -->
-    <span>Summer</span>
+    <span>Background 1</span>
   </li>
   <li>
-    <!-- By http://www.ForestWander.com [CC-BY-SA-3.0-us (http://creativecommons.org/licenses/by-sa/3.0/us/deed.en)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3ARed-fall-tree-lake_-_West_Virginia_-_ForestWander.png -->
-    <span>Fall</span>
+    <span>Background 2</span>
   </li>
   <li>
-    <!-- By Valerii Tkachenko [CC-BY-2.0 (http://creativecommons.org/licenses/by/2.0)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3AWinter_wonderland_Austria_mountain_landscape_(8290712092).jpg -->
-    <span>Winter</span>
+    <span>Background 3</span>
   </li>
   <li>
-    <!-- By Arman7 (Own work) [CC-BY-SA-3.0 (http://creativecommons.org/licenses/by-sa/3.0) or GFDL (http://www.gnu.org/copyleft/fdl.html)], via Wikimedia Commons, http://commons.wikimedia.org/wiki/File%3ABoroujerd_spring.jpg -->
-    <span>Spring</span>
+    <span>Background 4</span>
   </li>
 </ul>
-<div class="text" style="text-align:center">
-<!-- <div><img src="./spotify.png"></div> -->
-  <h1>When Spotify meets YouTube</h1>
-  
-<h2>Let us guide you through the world of music and your favourite artists!</h2>
-<label for="typeahead-basic">Search for artist:</label>
+
+
+<div class="central-text" style="text-align:center" *ngIf="showVisibility">
+  <p class="motto">When Spotify meets YouTube</p>
+<p class="description-line"><i>Let us guide you through the world of music and your favourite artists!</i></p>
+<label class="search-label">Search for artist:</label>
+<br>
 <br>
 <form (ngSubmit)="onSubmit()">
-	<input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="artistName" [ngModelOptions]="{standalone: true}"/>
+	<input type="text" class="form-control" [(ngModel)]="artistName" [ngModelOptions]="{standalone: true}"/>
 </form>
+<br>
 <div class="hr">
 	<hr>
 </div>
-<div *ngIf="loading"><p>Loading...</p></div>
+</div>
+
+<div class="loader">
+<!-- Loader -->
+<div *ngIf="loading">
+<img src="/assets/preloader.gif">
+</div>
+</div>
+<!-- Loader -->
+
 <div *ngFor="let album of albums" class="col-1-4">
 <div class="albums">
 <table>
 <tbody>
 	<th class='image'><img src="{{album.images[0].url}}" height="100" width="100">
-	<!-- <h3 [ngStyle]="{'visibility': showVisibility}">See tracks</h3> -->
 	</th>
 	<td><a href="{{album.external_urls.spotify}}" style="color: #72767f">{{ album.name }}</a>
 	<br>
@@ -46,4 +52,4 @@
 </table>
 </div>
 </div>
-</div>
+

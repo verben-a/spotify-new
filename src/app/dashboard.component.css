@@ -1,13 +1,42 @@
-.text {
+.central-text {
   position: relative;
+}
+
+.motto {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.description-line {
+  font-size: 22px;
+}
+
+.search-label {
+  font-weight: bold;
+  font-size: 28px;
 }
 
 .form-control { 
     width: 300px;
+    height: 30px;
     border-radius: 10px;
-    // opacity: 0.5;
     border: transparent;
     background-color: #ece1ef;
+    font-size: 20px;
+    opacity: 0.85;
+}
+
+.hr {
+  max-width: 100%;
+  margin: auto 0;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.loader {
+  z-index: 2;
+  position: relative;
+  margin-left: 580px;
 }
 
 .image h3 {
@@ -243,3 +272,4 @@ a {
 .no-cssanimations .slideshow li span {
   opacity: 1;
 }
+
