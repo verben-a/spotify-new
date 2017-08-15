@@ -17,9 +17,18 @@
 <div class="central-text" style="text-align:center" *ngIf="showVisibility">
   <p class="motto">When Spotify meets YouTube</p>
 <p class="description-line"><i>Let us guide you through the world of music and your favourite artists!</i></p>
-<label class="search-label">Search for artist:</label>
+<label class="search-label">Search for the artist:</label>
 <br>
 <br>
+
+<div class="loader">
+<!-- Loader -->
+<div *ngIf="loading">
+<img width="30" height="30" src="/assets/music-loader.gif">
+</div>
+</div>
+<!-- Loader -->
+
 <form (ngSubmit)="onSubmit()">
 	<input type="text" class="form-control" [(ngModel)]="artistName" [ngModelOptions]="{standalone: true}"/>
 </form>
@@ -29,13 +38,6 @@
 </div>
 </div>
 
-<div class="loader">
-<!-- Loader -->
-<div *ngIf="loading">
-<img src="/assets/preloader.gif">
-</div>
-</div>
-<!-- Loader -->
 
 <div *ngFor="let album of albums" class="col-1-4">
 <div class="albums">
@@ -43,13 +45,12 @@
 <tbody>
 	<th class='image'><img src="{{album.images[0].url}}" height="100" width="100">
 	</th>
-	<td><a href="{{album.external_urls.spotify}}" style="color: #72767f">{{ album.name }}</a>
+	<td><a href="{{album.external_urls.spotify}}" style="color: white">{{ album.name }}</a>
 	<br>
-	<a [routerLink]="['/album-details', album.id]">See tracks</a>
+	<a [routerLink]="['/album-details', album.id]" style="color: #5f274e">See tracks</a>
 	</td>
 	
 	</tbody>
 </table>
 </div>
 </div>
-

@@ -1,7 +1,15 @@
+.loader {
+  z-index: 2;
+  position: relative;
+  margin-left: 73px;
+}
+
 .tracklist {
   width: 70%;
-  margin-left: 50px;
+  margin-left: 150px;
   text-align: left;
+  color: white;
+
 }
 
 .trackname {
@@ -9,17 +17,13 @@
   height: 20px;
 }
 .listen, .watch {
-    width: 110px;
+    width: 400px;
     text-align: right;
-}
-
-.grey {
-  color: #72767f;
 }
 
 .white {
   color: white;
-  font-size: 13px;
+  font-size: 20px;
 }
 
 [class*='col-'] {

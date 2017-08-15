@@ -1,10 +1,18 @@
 <div class="album-detail">
-<div *ngIf="loading">Loading...</div>
+<div *ngIf="loading">
+<div class="loader">
+<!-- Loader -->
+<div *ngIf="loading">
+<img width="30" height="30" src="/assets/music-loader.gif">
+</div>
+</div>
+<!-- Loader -->
+</div>
   <div *ngFor="let track of tracks">
     <table class="tracklist">
       <tbody>
         <tr>
-          <th class="trackname" class="grey">{{track.name_of_song}}</th>
+          <th class="trackname" class="white">{{track.name_of_song}}</th>
           <th class="listen">
             <iframe [src]="('https://open.spotify.com/embed?uri=' + track.uri ) | safe" frameborder="0" allowtransparency="true"></iframe>
             </th>

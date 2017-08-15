@@ -3,15 +3,18 @@
 * {
     box-sizing: border-box;
     font-family: 'Roboto';
-    // font-size: 20px;
+    padding-left: 5px;
 }
 
 body {
+    padding-bottom: 40px;
     line-height: 1.6em;
     background-color: #222326;
     color: white;
     background-size: 100%;
     background-repeat: no-repeat;
-    background-color: #cccccc;
+    background: #c0392b; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #c0392b, #8e44ad); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #c0392b, #8e44ad); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
